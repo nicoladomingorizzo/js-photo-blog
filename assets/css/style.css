@@ -4,7 +4,7 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-};
+}
 
 /* Utilities */
 
@@ -15,23 +15,28 @@ box-sizing: border-box;
 --color-fuchsia-card : #d32676;
 --color-pink-card : #f66a97;
 --color-heavenly-card : #56a8c2;
-};
+}
 
 .container {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-};
+}
 
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 [class^="col"]{
     width: calc(100% / 12 * 1);
     margin-left: -1rem;
-};
+}
 
-.col-sm-12{
-    width : 100%;
-};
+.col-lg-4{
+    width : calc(100% / 12 * 4);
+}
+
 
 /* General */
 
@@ -40,24 +45,38 @@ box-sizing: border-box;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
-    margin: 20px auto;
-};
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
 
-/* body{
-}; */
+.card{
+    margin-top: 1rem;
+}
+img{
+    max-width: 100%;
+}
 
+header{
+    background-image: url('../img/wall.png');
+}
 
+main{
+    background-image: url('../img/cork.png');
+    
+}
 
 /* Tablet Mode */
 @media screen and (max-width: 768px){
     .col-md-6{
         width : 50%;
-    };
-};
+    }
+}
 
 /* Mobile mode */
-@media screen and (max-width: 768px){
-    .col-lg-4{
-        width: calc(100% / 12 * 4);
-    };
-};
+@media screen and (max-width: 480px){
+    .col-sm-12{
+        width: 100%;
+    }
+}
