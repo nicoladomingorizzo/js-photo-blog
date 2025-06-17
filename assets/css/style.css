@@ -1,0 +1,63 @@
+/* CSS Reset */
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+};
+
+/* Utilities */
+
+:root{
+--color-lightgreen-card: #92c952;
+--color-purple-card : #771796;
+--color-green-card : #24f354;
+--color-fuchsia-card : #d32676;
+--color-pink-card : #f66a97;
+--color-heavenly-card : #56a8c2;
+};
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+};
+
+
+[class^="col"]{
+    width: calc(100% / 12 * 1);
+    margin-left: -1rem;
+};
+
+.col-sm-12{
+    width : 100%;
+};
+
+/* General */
+
+.main-title{
+    font-family: Edu TAS Beginner, cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    margin: 20px auto;
+};
+
+/* body{
+}; */
+
+
+
+/* Tablet Mode */
+@media screen and (max-width: 768px){
+    .col-md-6{
+        width : 50%;
+    };
+};
+
+/* Mobile mode */
+@media screen and (max-width: 768px){
+    .col-lg-4{
+        width: calc(100% / 12 * 4);
+    };
+};
