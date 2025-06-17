@@ -63,7 +63,7 @@ main{
     height: 100%;
     
     .card{
-        margin: 2rem;
+        margin: 1.5rem;
         width: 250px;
         border: 10px solid white;
         position: relative;
@@ -95,7 +95,7 @@ main{
 /* Tablet Mode */
 @media screen and (max-width: 768px){
     .container {
-        width: 95%;
+        width: 85%;
     }
     .col-md-6{
         width : 50%;

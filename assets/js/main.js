@@ -33,7 +33,7 @@ for (let i = 0; i < 6; i++) {
         .then(data => {
             console.log(data[i]);
             const cardEl = document.createElement('card');
-            const { url, date, title } = cardEl;
+            //const { url, date, title } = cardEl;
             cardEl.innerHTML = `<div class="card col-sm-12 col-md-6 col-lg-3">
                 <div class="pin">
                     <img src="./assets/img/pin.svg" alt="pin for image">
