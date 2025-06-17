@@ -19,13 +19,15 @@ box-sizing: border-box;
 
 .container {
     width: 80%;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 .d-flex {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 [class^="col"]{
@@ -33,15 +35,15 @@ box-sizing: border-box;
     margin-left: -1rem;
 }
 
-.col-lg-4{
-    width : calc(100% / 12 * 4);
+.col-lg-3{
+    width : calc(100% / 12 * 3);
 }
 
 
 /* General */
 
 .main-title{
-    font-family: Edu TAS Beginner, cursive;
+    font-family: 'Edu TAS Beginner', cursive;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
@@ -51,12 +53,6 @@ box-sizing: border-box;
     font-size: 3rem;
 }
 
-.card{
-    margin-top: 1rem;
-}
-img{
-    max-width: 100%;
-}
 
 header{
     background-image: url('../img/wall.png');
@@ -64,11 +60,43 @@ header{
 
 main{
     background-image: url('../img/cork.png');
+    height: 100%;
+    
+    .card{
+        margin: 2rem;
+        width: 250px;
+        border: 10px solid white;
+        position: relative;
+
+        .pin{
+            position: absolute;
+            top: -25px;
+            left: 100px;
+        }
+    
+        img{
+            max-width: 100%;
+        }
+    
+        .card-body{
+            background-color: white;
+            margin-top: -5px;
+            padding-top: 0.5rem;
+            text-align: center;
+
+            p{
+                padding: 5px 0;
+            }
+        }
+    }
     
 }
 
 /* Tablet Mode */
 @media screen and (max-width: 768px){
+    .container {
+        width: 95%;
+    }
     .col-md-6{
         width : 50%;
     }
@@ -76,6 +104,9 @@ main{
 
 /* Mobile mode */
 @media screen and (max-width: 480px){
+    .container {
+        width: 95%;
+    }
     .col-sm-12{
         width: 100%;
     }
