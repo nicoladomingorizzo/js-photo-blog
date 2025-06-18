@@ -26,7 +26,9 @@ titoli: ‘Edu Tas Beginner’, sans-serif; date: ‘Sometype Mono’, ‘monosp
 
 const imgApiUrl = 'https://lanciweb.github.io/demo/api/pictures/?id=6';
 const imgContainerEl = document.getElementById('imgContainer');
-const overlayEl = document.getElementById('overlay')
+const overlayEl = document.getElementById('overlay');
+const closeBtnEl = document.getElementById('close-btn');
+const modalImgEl = document.getElementById('modal-img');
 
 for (let i = 0; i < 6; i++) {
     fetch(imgApiUrl)
@@ -34,7 +36,6 @@ for (let i = 0; i < 6; i++) {
         .then(data => {
             console.log(data[i]);
             const cardEl = document.createElement('card');
-            //const { url, date, title } = cardEl;
             cardEl.innerHTML = `<div class="card col-sm-12 col-md-6 col-lg-3">
                 <div class="pin">
                     <img src="./assets/img/pin.svg" alt="pin for image">
@@ -52,7 +53,6 @@ for (let i = 0; i < 6; i++) {
 };
 
 
-
 /*
 CONSEGNA
 Milestone 1
@@ -68,3 +68,27 @@ Bonus
 Spostandosi col mouse sopra le foto, queste si zoommano, ruotano di 10 gradi e la loro ombra aumenta, il tutto in manierà fluida.
 Inoltre il mouse diventa un puntatore, per far capire all’utente che può cliccare
 */
+
+
+// Event listener for show img modal
+document.querySelectorAll('.card img').forEach(img => {
+    img.addEventListener('click', () => {
+        showModalImg(img.src);
+    });
+});
+
+
+//  Event listener for hide modal
+closeBtnEl.addEventListener('click', hideModal);
+
+// Functions
+// Function show img modal
+function showModalImg(imgUrl) {
+    modalImgEl.src = imgUrl;
+    overlayEl.classList.remove('d-none');
+};
+
+// Function hide modal
+function hideModal() {
+    overlayEl.classList.add('d-none');
+};
