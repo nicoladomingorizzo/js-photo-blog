@@ -1,20 +1,20 @@
 /* CSS Reset */
 
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Utilities */
 
-:root{
---color-lightgreen-card: #92c952;
---color-purple-card : #771796;
---color-green-card : #24f354;
---color-fuchsia-card : #d32676;
---color-pink-card : #f66a97;
---color-heavenly-card : #56a8c2;
+:root {
+    --color-lightgreen-card: #92c952;
+    --color-purple-card: #771796;
+    --color-green-card: #24f354;
+    --color-fuchsia-card: #d32676;
+    --color-pink-card: #f66a97;
+    --color-heavenly-card: #56a8c2;
 }
 
 .container {
@@ -31,18 +31,22 @@ box-sizing: border-box;
     /* width: calc(250px * 4 + 1.5rem * 8); */
 }
 
-[class^="col"]{
+[class^="col"] {
     margin-left: -1rem;
 }
 
-.col-lg-3{
-    width : calc(100% / 12 * 3);
+.col-lg-3 {
+    width: calc(100% / 12 * 3);
 }
 
 
+.d-none {
+    display: none;
+}
+
 /* General */
 
-.main-title{
+.main-title {
     font-family: 'Edu TAS Beginner', cursive;
     font-optical-sizing: auto;
     font-weight: weight;
@@ -53,32 +57,53 @@ box-sizing: border-box;
     font-size: 3rem;
 }
 
+/* Overlay settings */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
 
-header{
+/* Modal settings */
+.modal {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+header {
     background-image: url('../img/wall.png');
 }
 
-main{
+main {
     background-image: url('../img/cork.png');
     height: 100%;
-    
-    .card{
+
+    .card {
         margin: 1.5rem;
         width: 250px;
         border: 10px solid white;
         position: relative;
 
-        .pin{
+        .pin {
             position: absolute;
             top: -25px;
             left: 100px;
         }
-    
-        img{
+
+        img {
             max-width: 100%;
         }
-    
-        .card-body{
+
+        .card-body {
             background-color: white;
             margin-top: -5px;
             padding-top: 0.5rem;
@@ -88,23 +113,23 @@ main{
             font-weight: weight;
             font-style: italic;
 
-            p{
+            p {
                 padding: 5px 0;
             }
         }
     }
-    
+
 }
 
 /* Tablet Mode */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
 
     .container {
         width: 85%;
     }
 
-    .col-md-6{
-        width : 50%;
+    .col-md-6 {
+        width: 50%;
     }
 
     /* .d-flex {
@@ -113,13 +138,13 @@ main{
 }
 
 /* Mobile mode */
-@media screen and (max-width: 480px){
+@media screen and (max-width: 480px) {
 
     .container {
         width: 95%;
     }
 
-    .col-sm-12{
+    .col-sm-12 {
         width: 100%;
     }
 
