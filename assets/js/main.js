@@ -33,7 +33,7 @@ fetch(imgApiUrl)
                 <img src="./assets/img/pin.svg" alt="pin for image">
                 </div>
                 <div class="card-header">
-                <img src=${url} alt=${title} class"card-image>
+                <img src=${url} alt=${title} class="card-image">
                 </div>
                 <div class="card-body">
                 <p>${title}</p>
@@ -45,11 +45,10 @@ fetch(imgApiUrl)
             // Event listener for show img modal
             cardEl.addEventListener('click', () => {
                 showModalImg(modalImgEl, cardImage);
-                //  Event listener for hide modal
             });
-            closeBtnEl.addEventListener('click', hideModal);
-            ;
         });
+        //  Event listener for hide modal
+        closeBtnEl.addEventListener('click', hideModal);
     });
 
 
