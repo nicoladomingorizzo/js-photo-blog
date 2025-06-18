@@ -41,20 +41,7 @@
 
 
 .d-none {
-    display: none;
-}
-
-/* General */
-
-.main-title {
-    font-family: 'Edu TAS Beginner', cursive;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    text-align: center;
-    padding: 10px 0;
-    text-transform: uppercase;
-    font-size: 3rem;
+    display: none !important;
 }
 
 /* Overlay settings */
@@ -79,6 +66,19 @@
     text-align: center;
 }
 
+/* General */
+.main-title {
+    font-family: 'Edu TAS Beginner', cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+
 header {
     background-image: url('../img/wall.png');
 }
@@ -92,6 +92,11 @@ main {
         width: 250px;
         border: 10px solid white;
         position: relative;
+
+        .card:hover {
+            transform: scale(1.3);
+            transform: rotate(30deg);
+        }
 
         .pin {
             position: absolute;
