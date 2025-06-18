@@ -30,27 +30,37 @@ const overlayEl = document.getElementById('overlay');
 const closeBtnEl = document.getElementById('close-btn');
 const modalImgEl = document.getElementById('modal-img');
 
-for (let i = 0; i < 6; i++) {
-    fetch(imgApiUrl)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data[i]);
-            const cardEl = document.createElement('card');
+fetch(imgApiUrl)
+    .then(response => response.json())
+    .then(data => {
+        data.forEach((card) => {
+            const { title, url, date } = card;
+            const cardEl = document.createElement('div');
             cardEl.innerHTML = `<div class="card col-sm-12 col-md-6 col-lg-3">
                 <div class="pin">
-                    <img src="./assets/img/pin.svg" alt="pin for image">
+                <img src="./assets/img/pin.svg" alt="pin for image">
                 </div>
                 <div class="card-header">
-                    <img src=${data[i].url} alt=${data[i].title}>
+                <img src=${url} alt=${title}>
                 </div>
                 <div class="card-body">
-                    <p>${data[i].title}</p>
-                    <p>${data[i].date}</p> 
+                <p>${title}</p>
+                <p>${date}</p>
                 </div>
                 </div>`;
             imgContainerEl.appendChild(cardEl);
+            // Event listener for show img modal
+            document.querySelectorAll('.card img').forEach(img => {
+                img.addEventListener('click', () => {
+                    const cardImg = img.url;
+                    showModalImg(cardImg);
+                    console.log(cardImg);
+                    //  Event listener for hide modal
+                    closeBtnEl.addEventListener('click', hideModal);
+                });
+            });
         });
-};
+    });
 
 
 /*
@@ -70,21 +80,11 @@ Inoltre il mouse diventa un puntatore, per far capire all’utente che può clic
 */
 
 
-// Event listener for show img modal
-document.querySelectorAll('.card img').forEach(img => {
-    img.addEventListener('click', () => {
-        showModalImg(img.src);
-    });
-});
-
-
-//  Event listener for hide modal
-closeBtnEl.addEventListener('click', hideModal);
 
 // Functions
 // Function show img modal
 function showModalImg(imgUrl) {
-    modalImgEl.src = imgUrl;
+    img.src = imgUrl;
     overlayEl.classList.remove('d-none');
 };
 
