@@ -60,10 +60,14 @@
 
 /* Modal settings */
 .modal {
-    background-color: white;
+    background-color: transparent;
     padding: 25px;
     border-radius: 10px;
     text-align: center;
+
+    img {
+        max-width: 60%;
+    }
 }
 
 #close-btn {
@@ -102,12 +106,6 @@ main {
         border: 10px solid white;
         position: relative;
 
-        .card:hover {
-            /* transform: scale(1.3), rotate(30deg); */
-            scale: 1.3;
-            rotate: 30deg;
-        }
-
         .pin {
             position: absolute;
             top: -25px;
@@ -134,6 +132,12 @@ main {
         }
     }
 
+}
+
+.card:hover {
+    /* transform: scale(1.3), rotate(30deg); */
+    scale: 1.2;
+    rotate: 20deg;
 }
 
 /* Tablet Mode */
