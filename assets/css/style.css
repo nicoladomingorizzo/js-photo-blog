@@ -135,9 +135,7 @@ main {
 }
 
 .card:hover {
-    /* transform: scale(1.3), rotate(30deg); */
-    scale: 1.2;
-    rotate: 20deg;
+    transform: scale(1.3), rotate(30deg);
 }
 
 /* Tablet Mode */
