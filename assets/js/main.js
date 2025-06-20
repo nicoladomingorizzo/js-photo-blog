@@ -30,6 +30,8 @@ fetch(imgApiUrl)
     .then(response => response.json())
     .then(data => {
         data.forEach((card) => {
+            // Save data of the call Ajax inside the array imagesData
+            imagesData = data;
             const { title, url, date } = card;
             const cardEl = document.createElement('div');
             cardEl.innerHTML = `<div class="card col-sm-12 col-md-6 col-lg-3">
