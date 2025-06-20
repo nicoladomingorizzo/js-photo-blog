@@ -21,6 +21,10 @@ const imgContainerEl = document.getElementById('imgContainer');
 const overlayEl = document.getElementById('overlay');
 const closeBtnEl = document.getElementById('close-btn');
 const modalImgEl = document.getElementById('modal-img');
+// Variable for the current img index 
+let currentImgIndex = 0;
+// Variable created for save data inside a new array 
+let imagesData = [];
 
 fetch(imgApiUrl)
     .then(response => response.json())
