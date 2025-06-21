@@ -51,10 +51,13 @@ fetch(imgApiUrl)
             // Event listener for show img modal
             cardEl.addEventListener('click', () => {
                 showModalImg(modalImgEl, cardImage);
+                cardEl.addEventListener('keyup', next);
+                cardEl.addEventListener('keyup', back);
             });
         });
         //  Event listener for hide modal
-        closeBtnEl.addEventListener('click', hideModal);
+        closeBtnEl.addEventListener('click', hideModalClick);
+        closeBtnEl.addEventListener('keydown', hideModal);
     });
 
 
@@ -65,7 +68,41 @@ function showModalImg(nodeEl, image) {
     overlayEl.classList.remove('d-none');
 };
 
-// Function hide modal
-function hideModal() {
+// Function hide modal with escate key
+function hideModal(event) {
+    if (event.key === 'Backspace') {
+        console.log('backspace down');
+        overlayEl.classList.add('d-none');
+    };
+    if (event.key === 'Escape') {
+        console.log('esc down');
+        overlayEl.classList.add('d-none');
+    };
+};
+
+// Function hide modal without escate key
+function hideModalClick() {
     overlayEl.classList.add('d-none');
+};
+
+//Function for next the image with keyboard (right key arrow)
+function next(event) {
+    if (event.key === 'ArrowRight') {
+        console.log('next image');
+        imagesData++;
+    };
+    if (imagesData === imagesData.length) {
+        imagesData = 0;
+    };
+};
+
+//Function for back the image with keyboard (left key arrow)
+function back(event) {
+    if (event.key === 'ArrowLeft') {
+        console.log('back image');
+        imagesData--;
+    };
+    if (imagesData < 0) {
+        imagesData = imagesData.length - 1;
+    };
 };
