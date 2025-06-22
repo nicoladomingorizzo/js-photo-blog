@@ -21,17 +21,17 @@ const imgContainerEl = document.getElementById('imgContainer');
 const overlayEl = document.getElementById('overlay');
 const closeBtnEl = document.getElementById('close-btn');
 const modalImgEl = document.getElementById('modal-img');
-// Variable for the current img index 
+/* // Variable for the current img index 
 let currentImgIndex = 0;
 // Variable created for save data inside a new array 
-let imagesData = [];
+let imagesData = []; */
 
 fetch(imgApiUrl)
     .then(response => response.json())
     .then(data => {
         data.forEach((card) => {
             // Save data of the call Ajax inside the array imagesData
-            imagesData = data;
+            //imagesData = data;
             const { title, url, date } = card;
             const cardEl = document.createElement('div');
             cardEl.innerHTML = `<div class="card col-sm-12 col-md-6 col-lg-3">
@@ -51,13 +51,13 @@ fetch(imgApiUrl)
             // Event listener for show img modal
             cardEl.addEventListener('click', () => {
                 showModalImg(modalImgEl, cardImage);
-                cardEl.addEventListener('keyup', next);
-                cardEl.addEventListener('keyup', back);
+                // cardEl.addEventListener('keyup', next);
+                // cardEl.addEventListener('keyup', back);
             });
         });
         //  Event listener for hide modal
         closeBtnEl.addEventListener('click', hideModalClick);
-        closeBtnEl.addEventListener('keydown', hideModal);
+        //closeBtnEl.addEventListener('keydown', hideModal);
     });
 
 
@@ -68,7 +68,7 @@ function showModalImg(nodeEl, image) {
     overlayEl.classList.remove('d-none');
 };
 
-// Function hide modal with escate key
+/* // Function hide modal with escate key
 function hideModal(event) {
     if (event.key === 'Backspace') {
         console.log('backspace down');
@@ -78,14 +78,14 @@ function hideModal(event) {
         console.log('esc down');
         overlayEl.classList.add('d-none');
     };
-};
+}; */
 
 // Function hide modal without escate key
 function hideModalClick() {
     overlayEl.classList.add('d-none');
 };
 
-//Function for next the image with keyboard (right key arrow)
+/* //Function for next the image with keyboard (right key arrow)
 function next(event) {
     if (event.key === 'ArrowRight') {
         console.log('next image');
@@ -94,9 +94,9 @@ function next(event) {
     if (imagesData === imagesData.length) {
         imagesData = 0;
     };
-};
+}; */
 
-//Function for back the image with keyboard (left key arrow)
+/* //Function for back the image with keyboard (left key arrow)
 function back(event) {
     if (event.key === 'ArrowLeft') {
         console.log('back image');
@@ -105,4 +105,4 @@ function back(event) {
     if (imagesData < 0) {
         imagesData = imagesData.length - 1;
     };
-};
+}; */
